@@ -1,0 +1,432 @@
+body, .showcase-container {
+  background: #1A1A1E !important;
+}
+
+.showcase-container {
+  color: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.showcase-banner {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.showcase-logo {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.showcase-intro {
+  margin: 2rem auto;
+  max-width: 700px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.showcase-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #23232b;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #0053c0;
+  font-size: 1.3rem;
+}
+
+.navbar-logo img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navbar-links li a:hover {
+  color: #ffd700;
+}
+
+.player-section {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.player-heading {
+  font-size: 1.3rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.shiny-count {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.player-shinies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  align-items: flex-start;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  /* Make it look less like a grid */
+  flex-direction: row;
+}
+
+.player-divider {
+  border: none;
+  border-top: 2px solid #28282d; /* Slightly lighter than #1A1A1E */
+  margin: 0.7rem 0 1.2rem 0;
+  width: 100%;
+  opacity: 0.85;
+}
+
+.shiny-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Ground the gif at the bottom */
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow: visible;
+  min-width: 104px;
+  min-height: 112px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px 0 #0002;
+  background: rgba(30,32,40,0.13);
+  /* Add random margin for organic look */
+  margin-left: calc(6px + 10 * (var(--shiny-rand, 0) - 0.5));
+  margin-right: calc(6px + 10 * (var(--shiny-rand2, 0) - 0.5));
+  margin-top: calc(4px + 8 * (var(--shiny-rand3, 0) - 0.5));
+}
+
+.shiny-gif {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: flex-end;
+  max-width: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  transition: filter 0.3s ease;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+} 
+
+.shiny-gif-glow {
+  filter: drop-shadow(0 0 3px gold) drop-shadow(0 0 8px #ffd70088) !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.sparkle-wrapper {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100px !important;
+  height: 100px !important;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+}
+
+.sparkle-wrapper.animate {
+  animation: sparkleFade 0.8s;
+}
+
+.sparkle-effect {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: drop-shadow(0 0 1px #00aaff) drop-shadow(0 0 4px #00aaff88);
+}
+
+.shiny-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shiny-overlay-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.shiny-overlay-secret {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  right: -10px;
+}
+
+.shiny-overlay-egg {
+  width: 14px;
+  height: 14px;
+  bottom: -10px;
+  right: -8px;
+}
+
+.shiny-overlay-swarm {
+  width: 15px;
+  height: 15px;
+  bottom: -6px;
+  right: -7px;
+}
+
+.shiny-alpha {
+  z-index: 2;
+  position: relative;
+  transform: scale(1.2);
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1); /* Ensure transition on .shiny-alpha too */
+}
+
+.shiny-container:hover {
+  transform: scale(1.3);
+}
+
+.shiny-container.shiny-alpha:hover {
+  transform: scale(1.4);
+}
+
+.shiny-container:hover .shiny-gif {
+  filter: brightness(1.1);
+}
+
+@keyframes sparkleFade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .player-shinies {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .player-shinies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sparkle-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Admin Panel Styling */
+.admin-panel {
+  background: #23232b;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #000a, 0 1.5px 0 #ffd700 inset;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 600px;
+  color: #f5f5f5;
+  font-size: 1.05rem;
+}
+.admin-panel h3 {
+  color: #ffd700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.admin-add-user {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.admin-add-user input {
+  background: #18181c;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #ffd700;
+  padding: 0.4rem 0.7rem;
+  font-size: 1rem;
+}
+.admin-add-user button {
+  background: #ffd700;
+  color: #23232b;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-add-user button:hover {
+  background: #fffbe6;
+}
+.admin-user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.admin-user-item {
+  background: #18181c;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 1px 6px #0004;
+}
+.admin-user-item b {
+  color: #ffd700;
+}
+.admin-user-item button {
+  background: #ffd700;
+  color: #23232b;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.8rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-user-item button:hover {
+  background: #fffbe6;
+}
+.admin-edit-user {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+.admin-edit-user input[type="text"], .admin-edit-user input[type="number"] {
+  background: #23232b;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #ffd700;
+  padding: 0.4rem 0.7rem;
+  font-size: 1rem;
+}
+.admin-edit-user button {
+  background: #ffd700;
+  color: #23232b;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
+  transition: background 0.2s;
+}
+.admin-edit-user button:hover {
+  background: #fffbe6;
+}
+.admin-shinies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.admin-shiny-item {
+  background: #ffd70022;
+  color: #ffd700;
+  border-radius: 5px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.admin-shiny-item button {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  padding: 0;
+  margin-left: 0.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-shiny-item button:hover {
+  background: #ffb3b3;
+  color: #23232b;
+}
+@media (max-width: 700px) {
+  .admin-panel {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+  }
+}
