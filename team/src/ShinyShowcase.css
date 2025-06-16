@@ -1,0 +1,139 @@
+body, .showcase-container {
+  background: #1A1A1E !important;
+}
+
+.showcase-container {
+  color: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.showcase-banner {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.showcase-logo {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.showcase-intro {
+  margin: 2rem auto;
+  max-width: 700px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.showcase-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.shiny-card {
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+}
+
+.shiny-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.shiny-info h2 {
+  margin: 0.5rem 0;
+  color: #ffd700;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #23232b;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #0053c0;
+  font-size: 1.3rem;
+}
+
+.navbar-logo img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navbar-links li a:hover {
+  color: #ffd700;
+}
+
+.player-section {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0; /* gap is handled by showcase-list */
+}
+
+.player-heading {
+  font-size: 1.3rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.shiny-count {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.player-shinies {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 4 per row, change 4 to your desired number */
+  gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.shiny-gif {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: #232323;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
