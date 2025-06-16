@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Radiance/static/css/main.1feebfd7.css",
-    "main.js": "/Radiance/static/js/main.67a3ffc7.js",
+    "main.js": "/Radiance/static/js/main.53d194ea.js",
     "static/js/453.9f86a706.chunk.js": "/Radiance/static/js/453.9f86a706.chunk.js",
     "static/media/wget.exe": "/Radiance/static/media/wget.08c63c516aff402c7440.exe",
     "static/media/vespiquen.gif": "/Radiance/static/media/vespiquen.a91343eb95dfb7cfabd4.gif",
@@ -1164,11 +1164,11 @@
     "index.html": "/Radiance/index.html",
     "static/media/robots.txt": "/Radiance/static/media/robots.31d6cfe0d16ae931b73c.txt",
     "main.1feebfd7.css.map": "/Radiance/static/css/main.1feebfd7.css.map",
-    "main.67a3ffc7.js.map": "/Radiance/static/js/main.67a3ffc7.js.map",
+    "main.53d194ea.js.map": "/Radiance/static/js/main.53d194ea.js.map",
     "453.9f86a706.chunk.js.map": "/Radiance/static/js/453.9f86a706.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1feebfd7.css",
-    "static/js/main.67a3ffc7.js"
+    "static/js/main.53d194ea.js"
   ]
 }
